@@ -53,6 +53,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
         'no-param-reassign': 'off', // аргументы функции изменять можно (у Redux)
         'no-undef': 'off', // тключаем ругань на глобальные переменные и типы
+        'react/no-array-index-key': 'off', // чтобы не ругался на index ключ
     },
     globals: {
         __IS_DEV__: true,
