@@ -43,10 +43,10 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to'], // исключения
+                ignoreAttribute: ['data-testid', 'to', 'target'], // исключения
             },
         ],
-        'max-len': ['error', { ignoreComments: true, code: 120 }], // длинные комментарии не дебажим
+        'max-len': ['error', { ignoreComments: true, code: 130 }], // длинные комментарии не дебажим
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off', // чтобы не ругалось, если мы используем открытие и закрытие модального окна на div
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks

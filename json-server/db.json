@@ -517,6 +517,98 @@
       ]
     }
   ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "some comment",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "text": "some comment 2",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "3",
+      "text": "some comment 3",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "4Cljjzl"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123asfasf",
+      "id": "AEM4Dvc"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "123asfasf",
+      "id": "IFEOWl0"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "привет мир",
+      "id": "dBacYRZ"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "хехехехе",
+      "id": "rBX_C-e"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "фыафыа",
+      "id": "5k0ApX-"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "sdfsdfsd",
+      "id": "w-HDIRq"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "asdasdasd",
+      "id": "MVvGQoZ"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "text": "comment 1",
+      "id": "bAs7YBE"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "python!!!",
+      "id": "p5rMadd"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "sdfsdf",
+      "id": "xo_HR3v"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "еуые",
+      "id": "SjQ5eJd"
+    }
+  ],
   "users": [
     {
       "id": "1",
