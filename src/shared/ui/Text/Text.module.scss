@@ -1,10 +1,8 @@
 .title {
-    font: var(--font-l);
     color: var(--primary-color);
 }
 
 .text {
-    font: var(--font-m);
     color: var(--secondary-color);
 }
 
@@ -15,6 +13,16 @@
 
     .text {
         color: var(--red-dark);
+    }
+}
+
+.inverted {
+    .title {
+        color: var(--inverted-primary-color);
+    }
+
+    .text {
+        color: var(--inverted-secondary-color);
     }
 }
 
