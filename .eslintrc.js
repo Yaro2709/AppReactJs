@@ -44,7 +44,7 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to', 'target'], // исключения
+                ignoreAttribute: ['role', 'data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap'], // исключения
             },
         ],
         'max-len': ['error', { ignoreComments: true, code: 130 }], // длинные комментарии не дебажим

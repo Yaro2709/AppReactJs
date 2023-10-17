@@ -9,6 +9,8 @@ export default ({ config }: {config: webpack.Configuration}) => {
         html: '',
         entry: '',
         src: path.resolve(__dirname, '..', '..', 'src'), // на два уровня выше путь до папки src
+        locales: '',
+        buildLocales: '',
     };
     config!.resolve!.modules!.push(paths.src); // прокидываем в массив modules
     config!.resolve!.extensions!.push('.ts', '.tsx'); // тк используем ts и tsx, то нам надо добавить их расширения
