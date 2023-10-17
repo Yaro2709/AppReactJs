@@ -4,6 +4,7 @@ import cls from './Button.module.scss';
 
 export enum ThemeButton { // темы кнопки
     CLEAR = 'clear', // кнопка без всего, просто текст
+    OUTLINE = 'outline',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{ // по умолчанию в `React` куча Props, поэтому мы их просто объявляем и наследуем
