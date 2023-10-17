@@ -6,6 +6,7 @@ module.exports = {
     extends: [
         'plugin:react/recommended',
         'airbnb',
+        'plugin:i18next/recommended',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -18,6 +19,7 @@ module.exports = {
     plugins: [
         'react',
         '@typescript-eslint',
+        'i18next', // наш плагин для подсказок перевода
     ],
     rules: {
         'react/jsx-indent': [2, 4], // отступы в jsx
@@ -35,6 +37,7 @@ module.exports = {
         'import/extensions': 'off', // в импортах не надо указывать расширение, тк мы так настроили вебпак
         'import/no-extraneous-dependencies': 'off', // отключим запрет на импорт дев зависимостей
         'no-underscore-dangle': 'off', // разршение на нижние подчеркивание
+        'i18next/no-literal-string': ['error', { markupOnly: true }], // правило, которое ругается если нет перевода при markupOnly - ругается только на отстутсвие переводов в jsx
     },
     globals: {
         __IS_DEV__: true,
