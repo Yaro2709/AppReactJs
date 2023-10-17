@@ -13,5 +13,9 @@
     --sidebar-width: 300px;/* размер SideBar */
     --sidebar-width-collapsed: 80px;/* размер SideBar при свертке */
     --modal-z-index: 10; /* индекм модального окна */
-    --overlay-color: rgba(0 0 0 / 60%); /* фон для модального окна */
+
+    // Цвета
+    --overlay-color: rgba(0 0 0 / 60%);/* фон для модального окна */
+    --red-light: #ff00; /*для ошибки*/
+    --red-dark: #ce0505; /*для ошибки*/
 }
