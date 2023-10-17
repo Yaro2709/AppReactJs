@@ -55,6 +55,7 @@ module.exports = {
     },
     globals: {
         __IS_DEV__: true,
+        __API__: true,
     },
     // для определенных типов фалов переопределить свойства переводов
     overrides: [
