@@ -3,8 +3,17 @@ import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from '../lib/ThemeContex
 
 const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT; // получаем тему из локального хранилища, преобразовали ее к типу `Theme` и если локальное хранилище не имеет значение, то по умолчанию ставить светлую тему.
 
-const ThemeProvider: FC = ({ children }) => {
-    const [theme, setTheme] = useState<Theme>(defaultTheme); // состояние темы
+interface ThemeProviderProps {
+    initialTheme?: Theme;
+}
+
+const ThemeProvider: FC<ThemeProviderProps> = (props) => {
+    const {
+        initialTheme,
+        children,
+    } = props;
+
+    const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme); // состояние темы
 
     const defaultProps = useMemo(() => ({ // позволяет не создавать каждый раз новый объект, а возвращать уже существующий.
         theme,

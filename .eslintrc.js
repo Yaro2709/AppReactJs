@@ -21,6 +21,7 @@ module.exports = {
         'react',
         '@typescript-eslint',
         'i18next', // наш плагин для подсказок перевода
+        'react-hooks',
     ],
     rules: {
         'react/jsx-indent': [2, 4], // отступы в jsx
@@ -46,6 +47,10 @@ module.exports = {
             },
         ],
         'max-len': ['error', { ignoreComments: true, code: 100 }], // длинные комментарии не дебажим
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off', // чтобы не ругалось, если мы используем открытие и закрытие модального окна на div
+        'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+        'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
     },
     globals: {
         __IS_DEV__: true,
@@ -53,9 +58,10 @@ module.exports = {
     // для определенных типов фалов переопределить свойства переводов
     overrides: [
         {
-            files: ['**/src/**/*.test.{ts,tsx}'], // для каких именно файлов
+            files: ['**/src/**/*.{test,stories}.{ts,tsx}'], // для каких именно файлов
             rules: {
                 'i18next/no-literal-string': 'off', // какие именно правила
+                'max-len': 'off',
             },
         },
     ],
