@@ -51,6 +51,7 @@ module.exports = {
         'jsx-a11y/click-events-have-key-events': 'off', // чтобы не ругалось, если мы используем открытие и закрытие модального окна на div
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+        'no-param-reassign': 'off', // аргументы функции изменять можно (у Redux)
     },
     globals: {
         __IS_DEV__: true,
