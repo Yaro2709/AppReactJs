@@ -7,5 +7,6 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration { 
         port: options.port, //порт, инициализируем из опций
         open: true, //для автоматического открытия страинцы в бразуере
         historyApiFallback: true, //позволяет исправить ошибку, если мы находимся не в корневой странице
+        hot: true,
     }
 }
