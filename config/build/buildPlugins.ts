@@ -4,7 +4,7 @@ import webpack from "webpack";
 import {BuildOptions} from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
-export function buildPlugins({paths}: BuildOptions): webpack.WebpackPluginInstance[] { //не забываем про типизацию WebpackPluginInstance
+export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPluginInstance[] { //не забываем про типизацию WebpackPluginInstance
 
     return [
         new HtmlWebpackPlugin({
@@ -14,6 +14,9 @@ export function buildPlugins({paths}: BuildOptions): webpack.WebpackPluginInstan
         new MiniCssExtractPlugin({ //плагин для css
             filename: 'css/[name].[contenthash:8].css', //делаем хеширование в названиях
             chunkFilename: 'css/[name].[contenthash:8].css', //делаем хеширование в названиях
-        })        
+        }),
+        new webpack.DefinePlugin({
+            __IS_DEV__: JSON.stringify(isDev),
+        })
     ]
 }
