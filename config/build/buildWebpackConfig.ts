@@ -16,6 +16,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
             filename: '[name].[contenthash].js', // название главного файла в нашей сборке
             path: paths.build, // путь куда будет происходить сборка
             clean: true, // чистим файлы перед сборкой
+            publicPath: '/',
         },
         plugins: buildPlugins(options), // вызываем функцию списка плагинов
         module: { // конфигурация loader. Предназначены для обработки файлов, которые выходят за рамки js, например: png, gif, css...
