@@ -4,8 +4,12 @@ import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 export const $api = axios.create({
     // ссылка запроса на сервер
     baseURL: __API__,
-    headers: {
+});
+
+$api.interceptors.request.use((config) => {
+    if (config.headers) {
         // достаем даннные, которые хранятся в локальном хранилище
-        authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
-    },
+        config.headers.Authorization = localStorage.getItem(USER_LOCALSTORAGE_KEY) || '';
+    }
+    return config;
 });
