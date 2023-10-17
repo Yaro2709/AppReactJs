@@ -11,6 +11,7 @@ interface ModalProps {
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
@@ -21,11 +22,20 @@ export const Modal = (props: ModalProps) => {
         children,
         isOpen, // открыто ли модальное окно
         onClose, // для закрытия модального окна
+        lazy, // ленивая загрузка
     } = props;
 
     const [isClosing, setIsClosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false); // по умолчанию модалка невмотирована
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
     const { theme } = useTheme();
+
+    // если хотя бы раз окно октрыто, то в этот момент компонент у нас вмонтировался
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
 
     // Если пользователь не передал onClose, то модальное окно живет.
     const closeHandler = useCallback(() => {
@@ -64,6 +74,10 @@ export const Modal = (props: ModalProps) => {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>
