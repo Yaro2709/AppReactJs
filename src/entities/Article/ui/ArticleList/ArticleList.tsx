@@ -10,7 +10,7 @@ interface ArticleListProps {
     className?: string;
     articles: Article[]
     isLoading?: boolean;
-    view?: ArticleView; /* какое именно отображение */
+    view?: ArticleView;
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
@@ -28,14 +28,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
     } = props;
     const { t } = useTranslation();
 
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                {getSkeletons(view)}
-            </div>
-        );
-    }
-
     const renderArticle = (article: Article) => (
         <ArticleListItem
             article={article}
@@ -50,6 +42,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             {articles.length > 0
                 ? articles.map(renderArticle)
                 : null}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });
