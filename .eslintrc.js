@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next', // наш плагин для подсказок перевода
         'react-hooks',
+        'react-app-entities', // наш плагин
     ],
     rules: {
         'react/jsx-indent': [2, 4], // отступы в jsx
@@ -54,6 +55,7 @@ module.exports = {
         'no-param-reassign': 'off', // аргументы функции изменять можно (у Redux)
         'no-undef': 'off', // тключаем ругань на глобальные переменные и типы
         'react/no-array-index-key': 'off', // чтобы не ругался на index ключ
+        'react-app-entities/path-checker': 'error', // наш плагин
     },
     globals: {
         __IS_DEV__: true,
