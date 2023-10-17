@@ -2,6 +2,7 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
+        jest: true,
     },
     extends: [
         'plugin:react/recommended',
@@ -38,6 +39,7 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off', // отключим запрет на импорт дев зависимостей
         'no-underscore-dangle': 'off', // разршение на нижние подчеркивание
         'i18next/no-literal-string': ['error', { markupOnly: true }], // правило, которое ругается если нет перевода при markupOnly - ругается только на отстутсвие переводов в jsx
+        'max-len': ['error', { ignoreComments: true }], // длинные комментарии не дебажим
     },
     globals: {
         __IS_DEV__: true,
