@@ -4,9 +4,10 @@ import path from "path";
 import {buildPlugins} from "./buildPlugins";
 import {buildLoaders} from "./buildLoaders";
 import {buildResolvers} from "./buildResolvers";
+import {buildDevServer} from "./buildDevServer";
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
-    const {paths, mode} = options; //проведем диструктуризацию: вытаксиваем мод и пути
+    const {paths, mode, isDev} = options; //проведем диструктуризацию: вытаксиваем мод и пути
 
     return {
         mode: mode, //этап нашей разработки
@@ -21,5 +22,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
             rules: buildLoaders(), //вызываем фнукцию, списка наших регулярных выражений и исключений
         },
         resolve: buildResolvers(), //вызываем функцию списка расширений, которые мы не будем указывать при подключении
+        devtool: isDev ? 'inline-source-map' : undefined,
+        devServer: isDev ? buildDevServer(options) : undefined, //devServer
     }
 }
