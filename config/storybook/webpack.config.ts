@@ -10,12 +10,13 @@ export default ({ config }: {config: webpack.Configuration}) => {
         entry: '',
         src: path.resolve(__dirname, '..', '..', 'src'), // на два уровня выше путь до папки src
     };
-    config.resolve.modules.push(paths.src); // прокидываем в массив modules
-    config.resolve.extensions.push('.ts', '.tsx'); // тк используем ts и tsx, то нам надо добавить их расширения
+    config!.resolve!.modules!.push(paths.src); // прокидываем в массив modules
+    config!.resolve!.extensions!.push('.ts', '.tsx'); // тк используем ts и tsx, то нам надо добавить их расширения
 
     // проходим по всем дефолтным правилам WebPack
     // eslint-disable-next-line no-param-reassign
-    config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
+    // @ts-ignore
+    config!.module!.rules = config!.module!.rules!.map((rule: RuleSetRule) => {
         // если регулярка svg, то в таком мы вернемя новый объект, в котором развернем старое правило, но исключаем файлы svg
         if (/svg/.test(rule.test as string)) {
             return { ...rule, exclude: /\.svg$/i };
@@ -25,15 +26,15 @@ export default ({ config }: {config: webpack.Configuration}) => {
         return rule;
     });
     // наш louder svg для StoryBook
-    config.module.rules.push({
+    config!.module!.rules.push({
         test: /\.svg$/,
         use: ['@svgr/webpack'],
     });
 
-    config.module.rules.push(buildCssLoader(true));
+    config!.module!.rules.push(buildCssLoader(true));
 
     // передам глобальную переменную
-    config.plugins.push(new DefinePlugin({
+    config!.plugins!.push(new DefinePlugin({
         __IS_DEV__: true,
         __API__: JSON.stringify(''),
     }));

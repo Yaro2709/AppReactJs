@@ -52,6 +52,7 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
         'no-param-reassign': 'off', // аргументы функции изменять можно (у Redux)
+        'no-undef': 'off', // тключаем ругань на глобальные переменные и типы
     },
     globals: {
         __IS_DEV__: true,
